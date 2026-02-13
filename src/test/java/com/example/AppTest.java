@@ -19,4 +19,9 @@ public class AppTest {
     public void testMultiply() {
         assertEquals(6, App.multiply(2, 3));
     }
+
+    @Test
+    public void testMultiply() {
+        assertEquals(8, App.multiply(2, 3));
+    }
 }
