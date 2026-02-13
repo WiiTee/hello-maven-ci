@@ -28,7 +28,7 @@ jobs:
       run: mvn test
 
     - name: Build Docker image
-      run: docker build -t hello-aven:${{ github.sha }} .
+      run: docker build -t hello-maven:${{ github.sha }} .
 
     - name: List Docker images
       run: docker images | grep hello-maven
