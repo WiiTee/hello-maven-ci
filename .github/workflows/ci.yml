@@ -42,7 +42,9 @@ jobs:
     - name: Build and push Docker image
       if : github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: |
-        docker build -t ghcr.io/${{ github.repository_owner }}/hello-maven:latest .
-        docker build -t ghcr.io/${{ github.repository_owner }}/hello-maven:${{ github.sha }} .
-        docker push ghcr.io/${{ github.repository_owner }}/hello-maven:latest
-        docker push ghcr.io/${{ github.repository_owner }}/hello-maven:${{ github.sha }} 
+        IMAGE_NAME=ghcr.io/wiitee/hello-maven
+        
+        docker build -t $IMAGE_NAME:latest .
+        docker build -t $IMAGE_NAME:${{ github.sha }} .
+        docker push $IMAGE_NAME:latest
+        docker push $IMAGE_NAME:${{ github.sha }} 
